@@ -20,13 +20,7 @@ export function getWinningRow(squares:Array<string>):Array<number> | null {
 }
 
 export function isWinner(squares:Array<string>) {
-    for (let i = 0; i < lines.length; i++) {
-        const [a, b, c] = lines[i];
-        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-            return squares[a]
-        }
-    }
-    return null
+    return getWinningRow(squares) !== null
 }
 
 function notNullsInArray(squares:Array<string>) {
